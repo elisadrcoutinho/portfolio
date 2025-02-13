@@ -41,7 +41,7 @@
       z-index: 1000;
     }
     .logo img {
-      width: 150px;
+      width: 70px;
     }
     .side-menu {
       position: fixed;
@@ -125,7 +125,7 @@
       color: #f83c10;
       margin-bottom: 20px;
       height: 4rem; 
-      border-right: 2px solid #1a73e8;
+      border-right: 2px solid #3a176a;
       animation: blink-caret 0.7s step-end infinite;
     }
     @keyframes blink-caret {
@@ -133,14 +133,15 @@
     }
     .subtitle {
       font-size: 1.5rem;
-      margin: 10px 0 30px;
+      margin: 100px;
+     
       color: #e0e0e0;
     }
     .buttons {
       margin-top: 20px;
     }
     .button {
-      background-color: #1a73e8;
+      background-color: #3a176a;
       color: white;
       padding: 15px 30px;
       text-decoration: none;
@@ -150,7 +151,7 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .button:hover {
-      background-color: #1558b2;
+      background-color: #9c2003;
       transform: scale(1.05);
     }
     
@@ -213,7 +214,7 @@
     }
     .footer-icons a:hover {
       transform: scale(1.1);
-      color: #1a73e8;
+      color: #3a176a;
     }
     .footer-links a {
       color: white;
@@ -223,7 +224,7 @@
       transition: color 0.3s ease;
     }
     .footer-links a:hover {
-      color: #1a73e8;
+      color: #3a176a;
     }
     .footer-content p {
       margin-top: 20px;
@@ -300,6 +301,16 @@
 </head>
 <body>
   
+  <div class="preloader">
+    <div class="logo-animation">
+      <img src="assets/logo_grafico.png" alt="Logotipo" id="animated-logo" style="width: 70px;">
+      <div class="callidus"><h1>Meu Portfólio</h1></div>
+    </div>
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+  
   <div class="logo" id="logo">
     <img src="assets/logo_grafico.png" alt="Logotipo">
   </div>
@@ -310,8 +321,7 @@
       <li><a href="index.html">Inicio</a></li>
       <li><a href="sobre.html">Sobre Mim</a></li>
       <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="curriculo.html">Currículo</a></li>
-      <li><a href="contacto.html">Contacte-me</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
 
     </ul>
   </nav>
@@ -385,7 +395,7 @@
         <a href="https://github.com/elisadrcoutinho"><i class="fab fa-git"></i></a>
         <a href="https://www.linkedin.com/in/elisadrummondrc"><i class="fab fa-linkedin"></i></a>
       </div>
-      <p>Desenvolvido por Elisa Coutinho, 2024</p>
+
       
       
   </footer>

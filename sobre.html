@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elisa Drummond - Sobre mim</title>
+  <title>Elisa Drummond - Sobre Mim</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
@@ -26,7 +26,7 @@
       height: 100%;
       object-fit: cover;
     }
-    
+      
     /* --------------------------
        ESTILOS GLOBAIS
     --------------------------- */
@@ -40,7 +40,7 @@
     }
     body {
       font-family: 'Montserrat', sans-serif;
-      background: black; 
+      background: black; /* O fundo é o vídeo */
       color: #e0e0e0;
       overflow-x: hidden;
       line-height: 1.6;
@@ -109,7 +109,7 @@
       z-index: 1000;
     }
     .logo img {
-      width: 150px;
+      width: 50px;
     }
     .side-menu {
       position: fixed;
@@ -142,8 +142,9 @@
     .side-menu ul li a:hover {
       background-color: rgba(255,255,255,0.2);
       border-radius: 5px;
-      color: #1a73e8;
+      color: #f83c10;
     }
+    
     
     /* --------------------------
        HERO / INTRODUÇÃO IMPACTANTE
@@ -171,112 +172,49 @@
     }
     .hero-content p {
       font-size: 1.3rem;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
     .hero-content .btn {
       padding: 15px 30px;
-      background: #1a73e8;
+      background: #3a176a;
       color: white;
       text-decoration: none;
       border-radius: 30px;
       transition: background 0.3s ease;
     }
     .hero-content .btn:hover {
-      background: #1558b2;
+      background: #9c2003;
     }
     
     /* --------------------------
-       Main Content
+       MAIN CONTENT
     --------------------------- */
     main {
       flex: 1;
       position: relative;
       z-index: 2;
-      padding: 100px 20px;
+      padding: 50px 10px;
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
-    .about {
-      margin-bottom: 50px;
-      padding: 20px;
+    .contact-header {
+      margin-bottom: 10px;
     }
-    .about h2 {
-      font-size: 2.5rem;
+    .contact-header h2 {
+      font-size: 3rem;
       margin-bottom: 20px;
       text-align: center;
     }
-    .about p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto 30px;
-      text-align: justify;
-    }
-    .values {
-      margin-bottom: 50px;
-      padding: 20px;
-    }
-    .values h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .values ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 300px;
-      text-align: left;
-    }
-    .values ul li {
-      font-size: 1.1rem;
-      margin: 10px 0;
-      line-height: 1.6;
-    }
-    .team {
-      margin-bottom: 50px;
-      padding: 20px;
-    }
-    .team h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .team-members {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-    .team-member {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-      width: 250px;
-      transition: transform 0.3s ease;
-    }
-    .team-member img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-    .team-member h3 {
-      font-size: 1.5rem;
-      margin-bottom: 5px;
-    }
-    .team-member p {
-      font-size: 1rem;
-      line-height: 1.6;
+    .contact-header p {
+      font-size: 1.3rem;
+     
     }
     
-    /* --------------------------
-       FOOTER (igual aos Proyectos)
-    --------------------------- */
+
     footer {
       position: relative;
       background: transparent;
-      padding: 40px 0;
       color: #e0e0e0;
       text-align: center;
       z-index: 2;
@@ -295,7 +233,7 @@
     }
     .footer-icons a:hover {
       transform: scale(1.1);
-      color: #1a73e8;
+      color: #3a176a;
     }
     .footer-links a {
       color: white;
@@ -305,128 +243,254 @@
       transition: color 0.3s ease;
     }
     .footer-links a:hover {
-      color: #1a73e8;
+      color: #3a176a;
     }
     .footer-content p {
       margin-top: 20px;
     }
     
     /* --------------------------
-       Preloader e Animações
+       BOTÓN "VOLVER ARRIBA"
     --------------------------- */
-    .preloader {
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 15px 20px;
+      background: #3a176a;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+    #backToTop:hover {
+      background: #9c2003;
+    }
+    
+    /* --------------------------
+       RESPONSIVIDADE
+    --------------------------- */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+    }
+/* ==========================
+       Botón "¿Quieres probarla?" (externo)
+========================== */
+.open-form {
+  margin: 30px auto 50px;
+  padding: 15px 30px;
+  background-color: #3a176a;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.open-form:hover {
+  background-color: #9c2003;
+}
+
+/* ==========================
+       Overlay Form (Experiência Imersiva)
+       – Aparece sobre el modal 
+    ========================== */
+    #overlay-form {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #121212;
+      background: rgba(0, 0, 0, 0.8);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      z-index: 9999;
-    }
-    .logo-animation {
-      animation: drop 1.5s ease forwards;
+      justify-content: center;
+      z-index: 11000; 
       opacity: 0;
-      transform: scale(0.5);
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
-    @keyframes drop {
-      0% {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
+    #overlay-form.open {
+      opacity: 1;
+      visibility: visible;
     }
-    .progress-bar {
-      width: 70%;
-      height: 5px;
-      background-color: #444;
-      margin-top: 20px;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    .progress {
-      width: 0;
+    #bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
-      background-color: #1a73e8;
-      animation: load 3s ease forwards;
+      object-fit: cover;
+      z-index: 1;
     }
-    @keyframes load {
-      0% { width: 0; }
-      100% { width: 100%; }
+    .form-container textarea {
+      width: calc(100% - 24px); 
+      max-width: 100%; 
+      resize: vertical; 
+      min-height: 250px;
     }
-    .preloader.fade-out {
-      opacity: 0;
-      transition: opacity 1.5s ease;
-    }
-    #animated-logo {
+
+    .form-container {
       position: relative;
-      animation: moveToCorner 1.5s ease forwards 3.5s;
+      background: #0d1a52;
+      padding: 30px;
+      border-radius: 10px;
+      width: 900px;
+      text-align: left;
+      z-index: 100;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     }
-    @keyframes moveToCorner {
-      0% {
-        transform: translateY(0);
-        width: 200px;
-      }
-      100% {
-        transform: translateY(-100vh) translateX(-100vw);
-        width: 150px;
-      }
+    .form-container h2 {
+      color:#007bff;
+      font-size: 25px;
+      margin-bottom: 15px;
+      text-align: center;
+
     }
+    .form-container label {
+      display: block;
+      text-align: left;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+    .form-container input::placeholder,
+    .form-container textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .form-container button[type="submit"] {
+      margin-top:4px;
+      width: 10%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .form-container button[type="submit"]:hover {
+      background: #0056b3;
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center; 
+      gap: 5px; 
+      font-size: 12px;
+      color: white;
+      white-space: normal; 
+    }
+
+    .checkbox-container input {
+      width: 16px; 
+      height: 16px;
+      margin-right: 5px; 
+    }
+
+    .checkbox-container label {
+      flex: 1; 
+      text-align: left;
+    }
+
+    
+
+
+    .checkbox-container a {
+      color: #3a176a;
+      text-decoration: none;
+    }
+    .checkbox-container a:hover {
+      text-decoration: underline;
+    }
+    .close-form {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .close-form img {
+      width: 20px;
+    }
+    
+
   </style>
 </head>
 <body>
-  <div class="video-background">
-    <video autoplay muted loop>
-      <source src="assets/background.mp4" type="video/mp4">
-      Tu navegador no soporta videos HTML5.
-    </video>
+  
   </div>
   
   <div class="logo" id="logo">
     <img src="assets/logo_grafico.png" alt="Logotipo">
   </div>
   
-  
   <nav class="side-menu" id="side-menu">
     <ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="sobre.html">Sobre Mim</a></li>
       <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="curriculo.html">Currículo</a></li>
-      <li><a href="contacto.html">Contacte-me</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
 
     </ul>
   </nav>
   
-  
   <header class="hero reveal">
     <div class="hero-content">
-      <h1 id="typed-title" data-text="Sobre Nosotros"></h1>
-      <p>Profissional com vasta experiência em Gestão de Projetos e Análise de Negócios, com foco atual em Análise de Dados e Business Intelligence. Certificada pelo Google Data Analytics, com experiência prática em SQL, Python, R, Power BI, Tableau, Google BigQuery e PowerQuery. Ao longo da minha carreira, atuei em diversas áreas de negócios, liderando equipas multifuncionais e impulsionando soluções colaborativas e inovadoras. Tenho fortes competências em limpeza e modelagem de dados, além de criar visualizações interativas que transformam dados complexos em insights claros e acionáveis para decisões estratégicas. Com experiência na gestão de OKRs e KPIs, contribuo para a otimização de processos e para a melhoria contínua da performance organizacional.</p>
-    </div>
-   
-  </header>
-  
-  
-    
-    
-    <footer>
-      <div class="footer-content">
-        <div class="footer-icons">
+      <h1 id="typed-title" data-text="Sobre Mim"></h1>
+      
+     
+      <main>
+        <div class="contact-header">
         
-          <a href="https://github.com/elisadrcoutinho"><i class="fab fa-git"></i></a>
-          <a href="https://www.linkedin.com/in/elisadrummondrc"><i class="fab fa-linkedin"></i></a>
+          <p>Profissional com vasta experiência em Gestão de Projetos e Análise de Negócios, com foco atual em Análise de Dados e Business Intelligence. Certificada pelo Google Data Analytics, com experiência prática em SQL, Python, R, Power BI, Tableau, Google BigQuery e PowerQuery. Ao longo da minha carreira, atuei em diversas áreas de negócios, liderando equipas multifuncionais e impulsionando soluções colaborativas e inovadoras. Tenho fortes competências em limpeza e modelagem de dados, além de criar visualizações interativas que transformam dados complexos em insights claros e acionáveis para decisões estratégicas. Com experiência na gestão de OKRs e KPIs, contribuo para a otimização de processos e para a melhoria contínua da performance organizacional.</p>
         </div>
       
-    </footer>
+       
+      </main>
+    </div>
+    
+  </header>
   
-    <script src="js/script.js"></script>
+     <div id="overlay-form">
+      <video autoplay muted loop id="bg-video">
+        <source src="assets/background.mp4" type="video/mp4">
+        
+      </video>
+     </div>
+  
+      <footer>
+        <div class="footer-content">
+          <div class="footer-icons">
+          
+            <a href="https://github.com/elisadrcoutinho"><i class="fab fa-git"></i></a>
+            <a href="https://www.linkedin.com/in/elisadrummondrc"><i class="fab fa-linkedin"></i></a>
+          </div>
+          
+          
+          
+      </footer>
+  
+  <script src="js/script.js"></script>
 
 </body>
 </html>

@@ -109,7 +109,7 @@
       z-index: 1000;
     }
     .logo img {
-      width: 150px;
+      width: 50px;
     }
     .side-menu {
       position: fixed;
@@ -176,14 +176,14 @@
     }
     .hero-content .btn {
       padding: 15px 30px;
-      background: #1a73e8;
+      background: #3a176a;
       color: white;
       text-decoration: none;
       border-radius: 30px;
       transition: background 0.3s ease;
     }
     .hero-content .btn:hover {
-      background: #1558b2;
+      background: #9c2003;
     }
     
     /* --------------------------
@@ -220,7 +220,7 @@
     }
     .contact-form h3 {
       font-size: 2rem;
-      color: #1a73e8;
+      color: #3a176a;
       margin-bottom: 20px;
     }
     .contact-form form {
@@ -243,7 +243,7 @@
     }
     .contact-form button {
       padding: 15px;
-      background: #1a73e8;
+      background: #3a176a;
       color: white;
       border: none;
       border-radius: 30px;
@@ -252,7 +252,7 @@
       transition: background 0.3s ease;
     }
     .contact-form button:hover {
-      background: #1558b2;
+      background: #9c2003;
     }
     .contact-map {
       margin-bottom: 50px;
@@ -269,12 +269,12 @@
       color:#007bff;
     }
     .contact-info {
-      margin-bottom: 50px;
+      margin-bottom: 100px;
       padding: 20px;
     }
     .contact-info h2 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 100px;
       text-align: center;
       color:#007bff;
     }
@@ -282,7 +282,7 @@
       font-size: 1.1rem;
       line-height: 1.6;
       max-width: 800px;
-      margin: 0 auto 30px;
+    
       text-align: justify;
     }
     
@@ -290,13 +290,14 @@
        FOOTER (igual aos Proyectos)
     --------------------------- */
     footer {
-      position: relative;
-      background: transparent;
-      padding: 40px 0;
-      color: #e0e0e0;
-      text-align: center;
-      z-index: 2;
-    }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  color: #e0e0e0;
+  background: rgba(0, 0, 0, 0.8); /* Adiciona um fundo para melhor visibilidade */
+}
     .footer-content {
       position: relative;
       max-width: 1200px;
@@ -311,7 +312,7 @@
     }
     .footer-icons a:hover {
       transform: scale(1.1);
-      color: #1a73e8;
+      color: #3a176a;
     }
     .footer-links a {
       color: white;
@@ -321,7 +322,7 @@
       transition: color 0.3s ease;
     }
     .footer-links a:hover {
-      color: #1a73e8;
+      color: #3a176a;
     }
     .footer-content p {
       margin-top: 20px;
@@ -335,7 +336,7 @@
       bottom: 30px;
       right: 30px;
       padding: 15px 20px;
-      background: #1a73e8;
+      background: #3a176a;
       color: white;
       border: none;
       border-radius: 50px;
@@ -345,7 +346,7 @@
       transition: background 0.3s ease;
     }
     #backToTop:hover {
-      background: #1558b2;
+      background: #9c2003;
     }
     
     /* --------------------------
@@ -365,7 +366,7 @@
 .open-form {
   margin: 30px auto 50px;
   padding: 15px 30px;
-  background-color: #1a73e8;
+  background-color: #3a176a;
   border: none;
   border-radius: 30px;
   color: white;
@@ -374,7 +375,7 @@
   transition: background-color 0.3s ease;
 }
 .open-form:hover {
-  background-color: #1558b2;
+  background-color: #9c2003;
 }
 
 /* ==========================
@@ -493,7 +494,7 @@
 
 
     .checkbox-container a {
-      color: #1a73e8;
+      color: #3a176a;
       text-decoration: none;
     }
     .checkbox-container a:hover {
@@ -515,15 +516,11 @@
   </style>
 </head>
 <body>
-  <div class="video-background">
-    <video autoplay muted loop id="bg-video">
-      <source src="assets/background.mp4" type="video/mp4">
-      Tu navegador no soporta videos HTML5.
-    </video>
+  
   </div>
   
   <div class="logo" id="logo">
-    <img src="assets/logo.png" alt="Logotipo">
+    <img src="assets/logo_grafico.png" alt="Logotipo">
   </div>
   
   <nav class="side-menu" id="side-menu">
@@ -531,15 +528,14 @@
       <li><a href="index.html">Inicio</a></li>
       <li><a href="sobre.html">Sobre Mim</a></li>
       <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="curriculo.html">Currículo</a></li>
-      <li><a href="contacto.html">Contacte-me</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
 
     </ul>
   </nav>
   
   <header class="hero reveal">
     <div class="hero-content">
-      <h1 id="typed-title" data-text="Contacto"></h1>
+      <h1 id="typed-title" data-text="Contacte-me"></h1>
       
      
       <main>
@@ -575,7 +571,7 @@
             <a href="https://github.com/elisadrcoutinho"><i class="fab fa-git"></i></a>
             <a href="https://www.linkedin.com/in/elisadrummondrc"><i class="fab fa-linkedin"></i></a>
           </div>
-          <p>Desenvolvido por Elisa Coutinho, 2024</p>
+     
           
           
       </footer>
