@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elisa Drummond - Currículo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <style>
+    /* --------------------------
+       BACKGROUND VIDEO GLOBAL
+    --------------------------- */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      opacity: 0.3;
+    }
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+     
+    /* --------------------------
+       ESTILOS GLOBAIS
+    --------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: black; 
+      color: #e0e0e0;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* --------------------------
+       REVEAL - ANIMAÇÃO AO ROLAR
+    --------------------------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --------------------------
+       TÍTULO FIXO AO ROLAR
+    --------------------------- */
+    .hero-content {
+    position: relative; 
+    text-align: center;
+    padding: 0 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    }
+    .hero-content h1,
+    .hero-content p {
+      margin: 0;
+    }
+    
+    /* --------------------------
+       SETA PARA BAIXO
+    --------------------------- */
+    .down-arrow {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 60%; 
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    opacity: 0; 
+    animation: fade-in 2s ease-in-out forwards; 
+    }
+
+    @keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    }
+ /* --------------------------
+       LOGO E MENU LATERAL
+    --------------------------- */
+    .logo {
+      position: fixed;
+      top: 15px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .logo img {
+      width: 150px;
+    }
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 999;
+    }
+    .side-menu.open {
+      left: 0;
+    }
+    .side-menu ul {
+      list-style: none;
+    }
+    .side-menu ul li {
+      margin: 15px 0;
+    }
+    .side-menu ul li a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+    .side-menu ul li a:hover {
+      background-color: rgba(255,255,255,0.2);
+      border-radius: 5px;
+      color: #f83c10;
+    }
+       /* --------------------------
+       SETA PARA BAIXO
+    --------------------------- */
+    .down-arrow {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 60%; 
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    opacity: 0; 
+    animation: fade-in 2s ease-in-out forwards; 
+    }
+
+    @keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    }
+    /* --------------------------
+       HERO / INTRODUÇÃO IMPACTANTE
+    --------------------------- */
+    header.hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      background: transparent;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      color: #f83c10;
+      margin-bottom: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+    }
+    .hero-content .btn {
+      padding: 15px 30px;
+      background: #1a73e8;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+    .hero-content .btn:hover {
+      background: #1558b2;
+    }
+    
+    /* --------------------------
+       MAIN CONTENT
+    --------------------------- */
+    main {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 300px;
+    }
+    .carreras-header {
+      margin-bottom: 50px;
+    }
+    .carreras-header h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .carreras-header p {
+      font-size: 1.3rem;
+      margin-bottom: 60px;
+    }
+    .vacancies {
+      margin-bottom: 50px;
+      padding: 20px;
+    }
+    .vacancies h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .vacancy-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .vacancy-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+    .vacancy-card h3 {
+      font-size: 1.8rem;
+      color: #1a73e8;
+      margin-bottom: 10px;
+    }
+    .vacancy-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .vacancy-card .btn {
+      display: inline-block;
+      background-color: #1a73e8;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .vacancy-card .btn:hover {
+      background-color: #1558b2;
+      transform: scale(1.05);
+    }
+    
+    .benefits {
+      margin-top:200px;
+      margin-bottom: 50px;
+      padding: 20px;
+    }
+    .benefits h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .benefits ul {
+      list-style: disc inside;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    .culture {
+      margin-bottom: 50px;
+      padding: 20px;
+    }
+    .culture h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .culture p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      text-align: justify;
+    }
+    
+    .application-process {
+      margin-bottom: 50px;
+      padding: 20px;
+    }
+    .application-process h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .application-process ol {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      text-align: left;
+    }
+    .application-process li {
+      margin-bottom: 10px;
+    }
+    .application-process p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      text-align: justify;
+    }
+    
+    /* --------------------------
+             FOOTER 
+    --------------------------- */
+    footer {
+      position: relative;
+      background: transparent;
+      padding: 40px 0;
+      color: #e0e0e0;
+      text-align: center;
+      z-index: 2;
+    }
+    .footer-content {
+      position: relative;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .footer-icons a {
+      color: white;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .footer-icons a:hover {
+      transform: scale(1.1);
+      color: #1a73e8;
+    }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: #1a73e8;
+    }
+    .footer-content p {
+      margin-top: 20px;
+    }
+       /* Adicione/atualize estas classes no seu CSS */
+       
+    /* --------------------------
+       FORMULÁRIO DE CANDIDATURA
+    --------------------------- */
+    #overlay-form-career {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 11000;  
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      
+    }
+
+    #overlay-form-career #bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    #overlay-form-career .form-container {
+      position: relative;
+      background: #0d1a52;
+      padding: 30px;
+      border-radius: 10px;
+      width: 700px;
+      text-align: center;
+      z-index: 100;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      max-height: 700px; /* Altura máxima */
+      overflow-y: auto; /* Adiciona scroll vertical quando necessário */
+    }
+
+    #overlay-form-career .form-container h2 {
+      color:#007bff;
+      font-size: 25px;
+      margin-bottom: 15px;
+      text-align: center;
+
+    }
+
+    #overlay-form-career .form-container label {
+      display: block;
+      text-align: left;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    #overlay-form-career .form-container input,
+    #overlay-form-career .form-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    #overlay-form-career .form-container input::placeholder,
+    #overlay-form-career .form-container textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    #overlay-form-career .form-container button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #overlay-form-career .form-container button[type="submit"]:hover {
+      background: #0056b3;
+    }
+
+    #overlay-form-career .checkbox-container a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    #overlay-form-career .checkbox-container a:hover {
+      text-decoration: underline;
+    }
+    #overlay-form-career .checkbox-container {
+      display: flex;
+      align-items: center; 
+      gap: 5px; 
+      font-size: 12px;
+      color: white;
+      white-space: normal; 
+      margin-bottom: 5px;
+    }
+
+    #overlay-form-career .checkbox-container input {
+      width: 16px; 
+      height: 16px;
+      margin-right: 5px; 
+    }
+
+    #overlay-form-career .checkbox-container label {
+      flex: 1; 
+      text-align: left;
+    }
+
+    #overlay-form-career .close-form {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    #overlay-form-career .close-form img {
+      width: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-background">
+    <video autoplay muted loop id="bg-video">
+      <source src="assets/background.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+  </div>
+  
+  <div class="logo" id="logo">
+    <img src="assets/logo.png" alt="Logotipo">
+  </div>
+  
+  <nav class="side-menu" id="side-menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre.html">Sobre Mim</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
+      <li><a href="curriculo.html">Currículo</a></li>
+      <li><a href="contacto.html">Contacte-me</a></li>
+
+    </ul>
+  </nav>
+  
+  
+  <header class="hero reveal">
+    <div class="hero-content">
+      <h1 id="typed-title" data-text="Currículo"></h1>
+      <p>Descarregue meu currículo</p>
+    </div>
+    <div class="down-arrow" id="down-arrow">
+      <i class="fas fa-arrow-down"></i>
+    </div>
+  </header>
+  
+  
+    <section class="benefits reveal">
+      <h2>Beneficios</h2>
+      <p>En Callidus, valoramos a nuestro equipo y ofrecemos beneficios competitivos para impulsar el crecimiento profesional y personal.</p>
+      <ul>
+        <li>Seguro de salud y dental</li>
+        <li>Horario flexible y posibilidad de trabajo remoto</li>
+        <li>Capacitación continua y desarrollo profesional</li>
+        <li>Bonificaciones y reconocimientos</li>
+        <li>Ambiente laboral dinámico y colaborativo</li>
+      </ul>
+    </section>
+    
+    <section class="culture reveal">
+      <h2>Nuestra Cultura</h2>
+      <p>Creemos en la innovación, la colaboración y el crecimiento continuo. En Callidus, cada miembro es valorado y se fomenta la creatividad, el liderazgo y el trabajo en equipo. Nuestro ambiente impulsa la transformación digital y el cambio positivo.</p>
+    </section>
+    
+    <section class="application-process reveal">
+      <h2>Proceso de Aplicación</h2>
+      <p>El proceso de aplicación en Callidus es sencillo y transparente:</p>
+      <ol>
+        <li>Envía tu currículum y carta de presentación a nuestro correo de contacto.</li>
+        <li>Recibirás una respuesta de nuestro equipo de recursos humanos.</li>
+        <li>Se programará una entrevista inicial y, de ser seleccionado, una entrevista técnica.</li>
+        <li>Finalmente, se te informará la decisión y los siguientes pasos.</li>
+      </ol>
+      <p>Si tienes alguna duda, no dudes en contactarnos.</p>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-icons">
+      
+        <a href="https://github.com/elisadrcoutinho"><i class="fab fa-git"></i></a>
+        <a href="https://www.linkedin.com/in/elisadrummondrc"><i class="fab fa-linkedin"></i></a>
+      </div>
+    
+  </footer>
+
+<script src="js/carreras.js"></script>
+
+</body>
+</html>

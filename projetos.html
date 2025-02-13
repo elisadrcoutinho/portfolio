@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elisa Drummond - Projetos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <style>
+    /* ==========================
+       BACKGROUND VIDEO PARA A PÁGINA TODA
+    ========================== */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      opacity: 0.3;
+    }
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* --------------------------
+       ESTILOS GLOBAIS
+    --------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: black; 
+      color: #e0e0e0;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* --------------------------
+       REVEAL - ANIMAÇÃO AO ROLAR
+    --------------------------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --------------------------
+       TÍTULO FIXO AO ROLAR
+    --------------------------- */
+    .hero-content {
+    position: relative; 
+    text-align: center;
+    padding: 0 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    }
+    .hero-content h1,
+    .hero-content p {
+      margin: 0;
+    }
+    
+    /* --------------------------
+       SETA PARA BAIXO
+    --------------------------- */
+    .down-arrow {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 60%; 
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    opacity: 0; 
+    animation: fade-in 2s ease-in-out forwards; 
+    }
+
+    @keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    }
+/* --------------------------
+       LOGO E MENU LATERAL
+    --------------------------- */
+    .logo {
+      position: fixed;
+      top: 15px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .logo img {
+      width: 150px;
+    }
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 999;
+    }
+    .side-menu.open {
+      left: 0;
+    }
+    .side-menu ul {
+      list-style: none;
+    }
+    .side-menu ul li {
+      margin: 15px 0;
+    }
+    .side-menu ul li a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+    .side-menu ul li a:hover {
+      background-color: rgba(255,255,255,0.2);
+      border-radius: 5px;
+      color: #1a73e8;
+    }
+    
+    
+    /* ==========================
+       HERO / INTRODUÇÃO IMPACTANTE
+    ========================== */
+    header.hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      background: transparent;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      color: #f83c10;
+      margin-bottom: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #1a73e8;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+    }
+    .hero-content .btn {
+      padding: 15px 30px;
+      background: #1a73e8;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+    .hero-content .btn:hover {
+      background: #1558b2;
+    }
+    
+    /* ==========================
+       TIMELINE - LINHA DO TEMPO INTERATIVA
+    ========================== */
+    section.timeline {
+      position: relative;
+      padding: 100px 10%;
+      background: transparent;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: #1a73e8;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      width: 45%;
+      padding: 20px;
+      background: rgba(60, 58, 58, 0.74);
+      border-radius: 10px;
+      margin: 40px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-item:nth-child(even) {
+      left: 55%;
+      text-align: left;
+    }
+    .timeline-item .timeline-content {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      margin:0;
+      display:inline-block;
+    }
+    .timeline-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10%; /* Faz a imagem ficar redonda como um ícone */
+      margin-bottom: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .timeline-item:hover img {
+      transform: scale(1.05);
+    }
+    .timeline-item h3 {
+      color: #1a73e8;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .timeline-item p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .timeline-item .btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .timeline-item .btn:hover {
+      background: #1558b2;
+    }
+    
+    /* ==========================
+       RESULTADOS E IMPACTO
+    ========================== */
+    section.results {
+      padding: 80px 10%;
+      background: transparent;
+      text-align: center;
+    }
+    section.results .result-item {
+      margin: 20px;
+      display: inline-block;
+      width: 200px;
+    }
+    section.results .result-item h3 {
+      font-size: 3rem;
+      color: #1a73e8;
+    }
+    section.results .result-item p {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+    
+    /* ==========================
+       MODAL DE DETALHES
+    ========================== */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      background: #2c2c2c;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 700px;
+      width: 100%;
+      position: relative;
+      text-align: left;
+      color: #e0e0e0;
+    }
+    .modal-content .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #e0e0e0;
+    }
+    
+    /* ==========================
+       FOOTER
+    ========================== */
+    footer {
+      position: relative;
+      background: transparent;
+      padding: 40px 0;
+      text-align: center;
+      color: #e0e0e0;
+      overflow: hidden;
+    }
+    .footer-content {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-icons a {
+      color: white;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .footer-icons a:hover {
+      transform: scale(1.1);
+      color: #1a73e8;
+    }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: #1a73e8;
+    }
+    .footer-content p {
+      margin-top: 20px;
+    }
+    
+    /* ==========================
+       BOTÓN "VOLVER ARRIBA"
+    ========================== */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 15px 20px;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+    #backToTop:hover {
+      background: #1558b2;
+    }
+    
+    /* ==========================
+       RESPONSIVIDADE
+    ========================== */
+    @media (max-width: 768px) {
+      .timeline-item {
+        width: 90%;
+        left: 5% !important;
+        text-align: left;
+      }
+      .timeline::before {
+        left: 5%;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="video-background">
+    <video autoplay muted loop id="bg-video">
+      <source src="assets/background.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+  </div>
+  
+  <div class="logo" id="logo">
+    <img src="assets/logo.png" alt="Logotipo">
+  </div>
+  
+  <nav class="side-menu" id="side-menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre.html">Sobre Mim</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
+      <li><a href="curriculo.html">Currículo</a></li>
+      <li><a href="contacto.html">Contacte-me</a></li>
+
+    </ul>
+  </nav>
+  
+  
+  
+  <header class="hero reveal">
+    <div class="hero-content">
+<h1 id="typed-title" data-text="Projetos"></h1>
+      <p>Aqui você encontrará uma variedade de projetos que demonstram minha experiência em diferentes ferramentas de análise e visualização de dados. Realizei análises detalhadas em Python utilizando Jupyter Notebook e Matplotlib, além de explorar o uso de SQL para consultas avançadas e Power BI com DAX para criar dashboards interativos. Também desenvolvi projetos em Excel, utilizando tabelas dinâmicas e gráficos simples para apresentar insights de maneira acessível. Cada projeto reflete meu domínio de diversas tecnologias e metodologias de análise de dados, evidenciando minha capacidade de trabalhar com diferentes ferramentas e criar soluções eficazes de visualização. </p>
+      <a href="#timeline" class="btn">Explorar</a>
+    </div>
+  </header>
+  
+  <section id="timeline" class="timeline reveal">
+    <div class="timeline-item reveal">
+      <div class="timeline-content">
+        <h3>Ambiente de negócios</h3>
+        <p>Neste projeto, atuei como analista de dados para melhorar o ambiente de negócios de uma cidade, com foco na redução da inadimplência em taxas municipais. Utilizando análise de dados e técnicas de Business Intelligence, propus mudanças estratégicas, como a implementação de um modelo de cobrança de licenciamento baseado no risco da atividade e a eliminação da taxa de renovação de alvará. Além disso, digitalizei o processo de emissão de alvarás, reduzindo o tempo de espera de 180 para 1 dia. Como resultado, aumentámos a receita municipal em 16%, reduzimos a inadimplência em 9% e estimulámos o crescimento de 43% na abertura de empresas. Este projeto destacou as minhas competências em análise preditiva e na transformação de dados em soluções estratégicas para os negócios..</p>
+        <button class="btn" onclick="window.location.href='projeto_mesquita.html'; openModal('recobros')">Ver mais</button>
+   </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-content">
+        <h3>Desenvolvimento de Estagiários</h3>
+        <p>Neste projeto, desenvolvi uma solução de monitoramento de desempenho para estagiários, com o objetivo de acompanhar sua evolução durante o período de aprendizado. Utilizando análise de dados e Business Intelligence, criámos uma plataforma web com questionários diários e métricas estruturadas, que avaliam habilidades técnicas, comportamentais e comunicação. Os dados coletados são analisados em Power BI, proporcionando visualizações interativas sobre o desempenho individual, métricas gerais e ranking dos estagiários. A solução permite identificar rapidamente áreas de melhoria, apoiar intervenções eficazes e otimizar a jornada de aprendizado dos estagiários.</p>
+        <button class="btn" onclick="window.location.href='projeto_powerbi.html'; openModal('recobros')">Ver mais</button>
+      </div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-content">
+        <h3>Tendencias de Empregos</h3>
+        <p>Este projeto foi realizado como parte do trabalho final de curso, com o objetivo de aplicar técnicas de análise de dados para extrair insights a partir de uma base de dados contendo postings de empregos no LinkedIn dos Estados Unidos. Utilizando Python, executei uma análise exploratória detalhada dos dados, empregando o framework pandas para limpeza e organização dos dados.
+
+          Durante o processo, foquei na identificação de padrões e tendências, como os níveis de experiência exigidos, os tipos de contrato disponíveis e as localizações das vagas. Utilizei o Matplotlib para criar gráficos interativos e de fácil interpretação, permitindo visualizar as distribuições das métricas mais relevantes.
+          
+          O projeto demonstrou minha capacidade de analisar dados de forma crítica, extrair insights valiosos e apresentar resultados claros por meio de visualizações impactantes, reforçando minhas habilidades em análise de dados e Business Intelligence.</p>
+        <button class="btn" onclick="window.location.href='projeto_empregos.html'; openModal('recobros')">Ver mais</button>
+      </div>
+    </div>
+    
+  </section>
+  
+  <section id="results" class="results reveal">
+    <h2 class="section-title">Impacto y Resultados</h2>
+    <div class="result-item">
+      <h3 class="counter" data-target="12000">0</h3>
+      <p>Empresas beneficiadas</p>
+    </div>
+    <div class="result-item">
+      <h3 class="counter" data-target="9">0</h3>
+      <p>% de redução de inadimplência</p>
+    </div>
+    <div class="result-item">
+      <h3 class="counter" data-target="43">0</h3>
+      <p>Abertura de novos négocios</p>
+    </div>
+    <div class="result-item">
+      <h3 class="counter" data-target="16">0</h3>
+      <p>% de aumento de receita</p>
+    </div>
+    <div class="result-item">
+      <h3 class="counter" data-target="50">0</h3>
+      <p>Processos otimizados</p>
+    </div>
+  </section>
+  
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalContent">
+      </div>
+    </div>
+  </div>
+  
+  <button id="backToTop" onclick="scrollToTop()">Volver arriba</button>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-icons">
+      
+        <a href="https://github.com/elisadrcoutinho"><i class="fab fa-git"></i></a>
+        <a href="https://www.linkedin.com/in/elisadrummondrc"><i class="fab fa-linkedin"></i></a>
+      </div>
+    
+  </footer>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
