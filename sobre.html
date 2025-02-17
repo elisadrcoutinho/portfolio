@@ -8,24 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
   <style>
-    /* --------------------------
-       BACKGROUND VIDEO GLOBAL
-    --------------------------- */
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      opacity: 0.3;
-    }
-    .video-background video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    
       
     /* --------------------------
        ESTILOS GLOBAIS
@@ -74,21 +57,7 @@
       margin: 0;
     }
     
-    /* --------------------------
-       SETA PARA BAIXO
-    --------------------------- */
-    .down-arrow {
-    display: none;
-    position: absolute;
-    left: 50%;
-    top: 60%; 
-    transform: translateX(-50%);
-    font-size: 3rem;
-    color: white;
-    cursor: pointer;
-    opacity: 0; 
-    animation: fade-in 2s ease-in-out forwards; 
-    }
+   
 
     @keyframes fade-in {
     0% {
@@ -198,18 +167,7 @@
       margin: 0 auto;
       text-align: center;
     }
-    .contact-header {
-      margin-bottom: 10px;
-    }
-    .contact-header h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .contact-header p {
-      font-size: 1.3rem;
-     
-    }
+   
     
 
     footer {
@@ -248,28 +206,7 @@
     .footer-content p {
       margin-top: 20px;
     }
-    
-    /* --------------------------
-       BOTÓN "VOLVER ARRIBA"
-    --------------------------- */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      padding: 15px 20px;
-      background: #3a176a;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      display: none;
-      z-index: 1000;
-      transition: background 0.3s ease;
-    }
-    #backToTop:hover {
-      background: #9c2003;
-    }
-    
+   
     /* --------------------------
        RESPONSIVIDADE
     --------------------------- */
@@ -281,157 +218,7 @@
         font-size: 1.1rem;
       }
     }
-/* ==========================
-       Botón "¿Quieres probarla?" (externo)
-========================== */
-.open-form {
-  margin: 30px auto 50px;
-  padding: 15px 30px;
-  background-color: #3a176a;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.open-form:hover {
-  background-color: #9c2003;
-}
 
-/* ==========================
-       Overlay Form (Experiência Imersiva)
-       – Aparece sobre el modal 
-    ========================== */
-    #overlay-form {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 11000; 
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    #overlay-form.open {
-      opacity: 1;
-      visibility: visible;
-    }
-    #bg-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
-    .form-container textarea {
-      width: calc(100% - 24px); 
-      max-width: 100%; 
-      resize: vertical; 
-      min-height: 250px;
-    }
-
-    .form-container {
-      position: relative;
-      background: #0d1a52;
-      padding: 30px;
-      border-radius: 10px;
-      width: 900px;
-      text-align: left;
-      z-index: 100;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    }
-    .form-container h2 {
-      color:#007bff;
-      font-size: 25px;
-      margin-bottom: 15px;
-      text-align: center;
-
-    }
-    .form-container label {
-      display: block;
-      text-align: left;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-    .form-container input,
-    .form-container textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-      font-size: 14px;
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-    }
-    .form-container input::placeholder,
-    .form-container textarea::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    .form-container button[type="submit"] {
-      margin-top:4px;
-      width: 10%;
-      padding: 12px;
-      background: #007bff;
-      color: white;
-      font-size: 14px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .form-container button[type="submit"]:hover {
-      background: #0056b3;
-    }
-    .checkbox-container {
-      display: flex;
-      align-items: center; 
-      gap: 5px; 
-      font-size: 12px;
-      color: white;
-      white-space: normal; 
-    }
-
-    .checkbox-container input {
-      width: 16px; 
-      height: 16px;
-      margin-right: 5px; 
-    }
-
-    .checkbox-container label {
-      flex: 1; 
-      text-align: left;
-    }
-
-    
-
-
-    .checkbox-container a {
-      color: #3a176a;
-      text-decoration: none;
-    }
-    .checkbox-container a:hover {
-      text-decoration: underline;
-    }
-    .close-form {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    .close-form img {
-      width: 20px;
-    }
     
 
   </style>
@@ -471,18 +258,13 @@
     
   </header>
   
-     <div id="overlay-form">
-      <video autoplay muted loop id="bg-video">
-        <source src="assets/background.mp4" type="video/mp4">
-        
-      </video>
-     </div>
+    
   
       <footer>
         <div class="footer-content">
           <div class="footer-icons">
           
-            <a href="https://github.com/elisadrcoutinho"><i class="fab fa-git"></i></a>
+            <a href="https://github.com/elisadrcoutinho"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/elisadrummondrc"><i class="fab fa-linkedin"></i></a>
           </div>
           

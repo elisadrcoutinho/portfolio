@@ -47,7 +47,7 @@ function typeTitle() {
   const typedTitleElement = document.getElementById("typed-title");
   if (!typedTitleElement) return;
   
-  const typedTitleText = typedTitleElement.dataset.text || "Explora el Futuro.";
+  const typedTitleText = typedTitleElement.dataset.text;
   let titleIndex = 0;
   
   function type() {

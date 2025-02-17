@@ -8,24 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
   <style>
-    /* --------------------------
-       BACKGROUND VIDEO GLOBAL
-    --------------------------- */
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      opacity: 0.3;
-    }
-    .video-background video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    
       
     /* --------------------------
        ESTILOS GLOBAIS
@@ -74,22 +57,7 @@
       margin: 0;
     }
     
-    /* --------------------------
-       SETA PARA BAIXO
-    --------------------------- */
-    .down-arrow {
-    display: none;
-    position: absolute;
-    left: 50%;
-    top: 60%; 
-    transform: translateX(-50%);
-    font-size: 3rem;
-    color: white;
-    cursor: pointer;
-    opacity: 0; 
-    animation: fade-in 2s ease-in-out forwards; 
-    }
-
+   
     @keyframes fade-in {
     0% {
         opacity: 0;
@@ -146,45 +114,39 @@
     }
     
     
-    /* --------------------------
-       HERO / INTRODUÇÃO IMPACTANTE
-    --------------------------- */
-    header.hero {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      background: transparent;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 0 20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .hero-content h1 {
-      font-size: 3.5rem;
-      color: #f83c10;
-      margin-bottom: 20px;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    .hero-content p {
-      font-size: 1.3rem;
-      margin-bottom: 40px;
-    }
-    .hero-content .btn {
-      padding: 15px 30px;
-      background: #3a176a;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      transition: background 0.3s ease;
-    }
-    .hero-content .btn:hover {
-      background: #9c2003;
-    }
+   /* --------------------------
+   HERO / INTRODUÇÃO IMPACTANTE
+--------------------------- */
+header.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 60px; /* Adicionando margem superior para espaçar do topo */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: #f83c10;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+}
+  
     
     /* --------------------------
        MAIN CONTENT
@@ -198,96 +160,10 @@
       margin: 0 auto;
       text-align: center;
     }
-    .contact-header {
-      margin-bottom: 50px;
-    }
-    .contact-header h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .contact-header p {
-      font-size: 1.3rem;
-      margin-bottom: 40px;
-    }
-    .contact-form {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 40px;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: 0 auto 50px;
-      text-align: left;
-    }
-    .contact-form h3 {
-      font-size: 2rem;
-      color: #3a176a;
-      margin-bottom: 20px;
-    }
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 15px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      background-color: rgba(255, 255, 255, 0.2);
-      color: white;
-    }
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    .contact-form button {
-      padding: 15px;
-      background: #3a176a;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .contact-form button:hover {
-      background: #9c2003;
-    }
-    .contact-map {
-      margin-bottom: 50px;
-    }
-    .contact-map iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 10px;
-      text-align: center;
-     }
-    .location{
-      text-align:center;
-      color:#007bff;
-    }
-    .contact-info {
-      margin-bottom: 50px;
-      padding: 20px;
-    }
-    .contact-info h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-align: center;
-      color:#007bff;
-    }
-    .contact-info p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto 30px;
-      text-align: justify;
-    }
+  
     
     /* --------------------------
-       FOOTER (igual aos Proyectos)
+       FOOTER 
     --------------------------- */
     footer {
       position: relative;
@@ -327,26 +203,40 @@
       margin-top: 20px;
     }
     
-    /* --------------------------
-       BOTÓN "VOLVER ARRIBA"
-    --------------------------- */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      padding: 15px 20px;
-      background: #3a176a;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      display: none;
-      z-index: 1000;
-      transition: background 0.3s ease;
-    }
-    #backToTop:hover {
-      background: #9c2003;
-    }
+/* ==========================
+       BOTÃO "VOLTAR PARA PROJETOS"
+    ========================== */
+    #backToProjects {
+  position: fixed;
+  bottom: 30px; /* Distância do fundo */
+  right: 30px;  /* Distância da lateral direita */
+  padding: 15px 20px;
+  background: #3a176a; /* Cor de fundo */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backToProjects:hover {
+  background: #9c2003; /* Efeito de hover */
+}
+
+#backToProjects i {
+  margin-right: 10px;
+}
+
+/* Esconde o botão até que o usuário role para baixo (se necessário) */
+#backToProjects {
+  display: block;
+}
     
     /* --------------------------
        RESPONSIVIDADE
@@ -359,158 +249,37 @@
         font-size: 1.1rem;
       }
     }
-/* ==========================
-       Botón "¿Quieres probarla?" (externo)
-========================== */
-.open-form {
-  margin: 30px auto 50px;
-  padding: 15px 30px;
-  background-color: #3a176a;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+
+   /* --------------------------
+   RESPONSIVIDADE
+--------------------------- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  iframe {
+    width: 100%;
+    height: 60vh; /* Ajusta a altura para 60% da altura da tela */
+  }
 }
-.open-form:hover {
-  background-color: #9c2003;
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  iframe {
+    width: 100%;
+    height: 50vh; /* Ajusta a altura para 50% da altura da tela */
+  }
 }
 
-/* ==========================
-       Overlay Form (Experiência Imersiva)
-       – Aparece sobre el modal 
-    ========================== */
-    #overlay-form {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 11000; 
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    #overlay-form.open {
-      opacity: 1;
-      visibility: visible;
-    }
-    #bg-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
-    .form-container textarea {
-      width: calc(100% - 24px); 
-      max-width: 100%; 
-      resize: vertical; 
-      min-height: 250px;
-    }
-
-    .form-container {
-      position: relative;
-      background: #0d1a52;
-      padding: 30px;
-      border-radius: 10px;
-      width: 900px;
-      text-align: left;
-      z-index: 100;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    }
-    .form-container h2 {
-      color:#007bff;
-      font-size: 25px;
-      margin-bottom: 15px;
-      text-align: center;
-
-    }
-    .form-container label {
-      display: block;
-      text-align: left;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-    .form-container input,
-    .form-container textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-      font-size: 14px;
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-    }
-    .form-container input::placeholder,
-    .form-container textarea::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    .form-container button[type="submit"] {
-      margin-top:4px;
-      width: 10%;
-      padding: 12px;
-      background: #007bff;
-      color: white;
-      font-size: 14px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .form-container button[type="submit"]:hover {
-      background: #0056b3;
-    }
-    .checkbox-container {
-      display: flex;
-      align-items: center; 
-      gap: 5px; 
-      font-size: 12px;
-      color: white;
-      white-space: normal; 
-    }
-
-    .checkbox-container input {
-      width: 16px; 
-      height: 16px;
-      margin-right: 5px; 
-    }
-
-    .checkbox-container label {
-      flex: 1; 
-      text-align: left;
-    }
-
-    
-
-
-    .checkbox-container a {
-      color: #3a176a;
-      text-decoration: none;
-    }
-    .checkbox-container a:hover {
-      text-decoration: underline;
-    }
-    .close-form {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    .close-form img {
-      width: 20px;
-    }
-    
+   
 
   </style>
 </head>
@@ -549,18 +318,16 @@
     
   </header>
   
-     <div id="overlay-form">
-      <video autoplay muted loop id="bg-video">
-        <source src="assets/background.mp4" type="video/mp4">
-        
-      </video>
-     </div>
+<!-- Botão flutuante para voltar à página de projetos -->
+<a href="projetos.html" id="backToProjects">
+  Voltar aos Projetos
+</a>
   
       <footer>
         <div class="footer-content">
           <div class="footer-icons">
           
-            <a href="https://github.com/elisadrcoutinho"><i class="fab fa-git"></i></a>
+            <a href="https://github.com/elisadrcoutinho"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/elisadrummondrc"><i class="fab fa-linkedin"></i></a>
           </div>
    
