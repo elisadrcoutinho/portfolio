@@ -253,20 +253,7 @@
     </div>
   </footer>
 
-  <script>
-    // Função para carregar o arquivo Markdown
-    fetch('docs/Analise_Linkedin_2024.md')
-      .then(response => response.text())
-      .then(data => {
-        // Converter Markdown para HTML
-        const htmlContent = marked(data);
-        // Exibir o conteúdo convertido no elemento
-        document.getElementById('markdown-content').innerHTML = htmlContent;
-      })
-      .catch(error => {
-        console.error("Erro ao carregar o arquivo Markdown:", error);
-      });
-  </script>
+
 
   <script src="js/script.js"></script>
 
